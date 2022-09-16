@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 import 'di.dart' as di;
 
-void main() async {
+void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   // Must add this line.
   await windowManager.ensureInitialized();
@@ -12,10 +12,10 @@ void main() async {
     size: Size(1280, 720),
     center: true,
     backgroundColor: Colors.transparent,
-    skipTaskbar: false,
+    skipTaskbar: true,
     titleBarStyle: TitleBarStyle.hidden,
     fullScreen: true,
-    alwaysOnTop: false,
+    alwaysOnTop: true,
   );
   windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();
