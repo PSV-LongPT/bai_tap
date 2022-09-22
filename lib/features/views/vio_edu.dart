@@ -35,44 +35,13 @@ class _VioEduState extends State<VioEdu> {
     // a custom user data directory
     // and/or a custom browser executable directory
     // and/or custom chromium command line flags
-    if (widget.showFps) {
-      // await WebviewController.initializeEnvironment(additionalArguments: '--show-fps-counter');
-    }
+     // await WebviewController.initializeEnvironment(additionalArguments: '--show-fps-counter');
 
     try {
       await _controller.initialize();
       await _controller.setBackgroundColor(Colors.transparent);
       await _controller.setPopupWindowPolicy(WebviewPopupWindowPolicy.deny);
       await _controller.loadUrl(_domain);
-      _controller.loadingState.listen((event) async {
-        print(event);
-        // await _controller.executeScript('''
-        //     // Xóa menu
-        //     document.getElementById('menu').remove();
-        //   ''');
-        // if (event == LoadingState.navigationCompleted) {
-        //   await _controller.executeScript('''
-        //     // Xóa quảng cáo ở trang login/register
-        //     const boxes = document.querySelectorAll('.banner-right');
-        //     boxes.forEach(box => {
-        //       box.remove();
-        //     })
-        //   ''');
-        //   await _controller.executeScript('''
-        //     // Mở rộng khung login nhìn cho đỡ xấu!
-        //     document.getElementsByClassName('register-box')[0].style.width = '100%';
-        //   ''');
-        //   await _controller.executeScript('''
-        //     // Mở rộng khung login nhìn cho đỡ xấu!
-        //     document.getElementById('form_login').style.width = '100%';
-        //   ''');
-        //   await _controller.executeScript('''
-        //     // Mở rộng khung login nhìn cho đỡ xấu!
-        //     document.getElementById('register-form').style.width = '100%';
-        //   ''');
-        // }
-      });
-      // await _controller.openDevTools();
 
       if (!mounted) return;
       setState(() {});

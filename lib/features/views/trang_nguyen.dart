@@ -72,7 +72,6 @@ class _TrangNguyenState extends State<TrangNguyen> {
           ''');
         }
       });
-      // await _controller.openDevTools();
 
       if (!mounted) return;
       setState(() {});
